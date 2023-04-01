@@ -20,3 +20,4 @@ class Solution:
         return ''.join(rows)
     
     convert("paypalishiring", 3)
+    convert("paypalishiring", 3)
