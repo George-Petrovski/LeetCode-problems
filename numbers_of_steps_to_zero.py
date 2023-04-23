@@ -11,3 +11,4 @@ class Solution:
                 num -= 1
             else:
                 num >>= 1
+        return steps
