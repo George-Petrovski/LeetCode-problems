@@ -16,7 +16,7 @@ class SmallestInfiniteSet:
         
 
     def addBack(self, num: int) -> None:
-        if self.cur > num:
+        if self.cur > num and num not in self.s:
             self.s.add(num)
         
 
