@@ -1,0 +1,13 @@
+/*
+Enter your query below.
+Please append a semicolon ";" at the end of the query
+*/
+
+SELECT c.name
+FROM candidates c JOIN submissions s ON c.id = s.candidate_id
+GROUP BY c.name
+HAVING SUM(
+    CASE WHEN TIMESTAMPDIFF(MINUTE, s.start_time, s.submission_time) <= 10 
+    THEN TIMESTAMPDIFF(MINUTE, s.start_time, s.submission_time)
+    ELSE 0 END ) >= 30
+ORDER BY c.name ASC;
