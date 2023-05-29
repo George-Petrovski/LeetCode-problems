@@ -2,5 +2,10 @@ from typing import List
 
 
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        return len(nums) - len(set(nums))
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        hset = {}
+        for idx in range(len(nums)):
+            if nums[idx] in hset and abs(idx - hset[nums[idx]]) <= k:
+                return True
+            hset[nums[idx]] = idx
+        return False
