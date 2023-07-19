@@ -15,3 +15,20 @@ def erase_overlap_intervals(intervals)
 
     return n - count
 end
+
+# @param {Integer[][]} intervals
+# @return {Integer}
+def better_erase_overlap_intervals(intervals)
+    intervals.sort_by!(&:last)
+
+    bound = -Float::INFINITY
+    count = 0
+    intervals.each do |s, e|
+        if bound <= s
+            bound = e
+            count += 1
+        end
+    end
+
+    return intervals.length - count
+end
