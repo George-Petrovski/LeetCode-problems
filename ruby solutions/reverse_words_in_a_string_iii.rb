@@ -1,3 +1,5 @@
-class Solution:
-    def reverseWords(self, s: str) -> str:
-        return ' '.join(map(lambda word: word[::-1], s.split()))
+# @param {String} s
+# @return {String}
+def reverse_words(s)
+    s.split.map { |word| word.reverse }.join(' ')
+end
